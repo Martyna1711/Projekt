@@ -128,24 +128,4 @@ class Transformacje:
         y92 = round(m_0*y + 500000, 3)
         return x92, y92
 
-    def azymut_elewacja(self, X0, Y0, Z0, X, Y, Z):
-        n,e,u = self.neu(X0, Y0, Z0, X, Y, Z)
-
-        hz = math.sqrt(e**2 + n**2)  # odleglosc horyzontalna
-        el = math.sqrt(e**2 + n**2 + u**2)  # dlugosc wektora
-        azymut = math.atan2(e,n)
-        elewacja = math.atan2(u,hz)
-
-        if azymut < 0:
-            azymut += 2 * math.pi
-
-        return(math.degrees(azymut), math.degrees(elewacja))
-
-    def odleglosc_2D_3D(self, A,B,C,A1,B1,C1):
-        dX = A - A1
-        dY = B - B1
-        dZ = C - C1
-
-        d_2D = sqrt((dX**2) + (dY**2))
-        d_3D = sqrt((dX**2) + (dY**2) + (dZ**2))
-        return (d_2D, d_3D)
+    
