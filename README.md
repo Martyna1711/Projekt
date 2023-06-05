@@ -24,7 +24,7 @@ Zadaniem Kalkuratora jest przeliczanie współrzędnych na różne sposoby.
 Program posiada następujące funkcje:
 - hirvonen - Wykonuje transformacje XYZ na BLH.
 - geodezyjne2XYZ - Jest odwrotnością Hirvonena. 
-- neu - Wykonuje transformacje z współrzędnych geodezyjnych do układu trójwymiarowego NEU.
+- neu - Wykonuje transformacje z współrzędnych geodezyjnych do układu topocentrycznego NEU.
 - u2000 - Wykonuje transformacje współrzędnych geodezyjnych do współrzędnych płaskich prostokątnych  w układzie 2000. 
 - u1992 - Wykonuje transformacje współrzędnych geodezyjnych do współrzędnych płaskich prostokątnych  w układzie 1992.
 
@@ -43,7 +43,7 @@ Program został napisany, z myślą o pracy na komputerach lub laptopach posiada
 3. Wymagane oprogramowanie 
 
 
-Do uruchomienia programu potrzebne będzie środowisko spyder w wersji 3.8 lub nowszej.
+Do uruchomienia programu potrzebne będzie środowisko python w wersji 3.8 lub nowszej.
 
 Dodatkowo potrzeba będzie posiadać zainstalowane następujące biblioteki:
 - math
