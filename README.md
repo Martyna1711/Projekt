@@ -1,8 +1,8 @@
 Kalkulator Geodezyjny 
 
-Wersja 1.0
+Wersja 1.1
 
-Kwiecień 2023
+Czerwiec 2023
 
 Spis treści
 =======================
@@ -50,34 +50,49 @@ Dodatkowo potrzeba będzie posiadać zainstalowane następujące biblioteki:
 - numpy
 - argparse
 
+Instalacja bibliotek na systemie windows wygląda następująco:
+Otwieramy folder, w którmy znajduje się nasz program. 
+W pasku zawierającym ścieżkę dostępu wpisujemy cmd i wciskamy enter.
+W odpalonej konsoli windowsa należy wpisać komendę:
+python -m pip install [options]
+zamiast options wpisać nazwę biblioteki
+
 =======================
 
 4. Instalacja i uruchomienie 
 
+Aby poprawnie uruchomić program należy:
+- Umieścić pliki main.py i transformacje.py w jednym folderze.
+- W pasku zawierającym ścieżkę dostępu wpisujemy cmd i wciskamy enter.
+- W konsoli wpisać polecenie main.py
+- Jeżeli wszystko jest poprawnie, to powinna pojawić się informacja o braku podanych ścieżek. 
+Natomiast jeżeli będzie brakowało jednej z bibliotek, to patrz punkt wyżej
+- Jak już biblioteki są zainstalowane, to należy podać ścieżki do pliku wejściowego i wyjściowego. Przykład całej komendy:
+main.py --input C:\Users\Axus\Desktop\proj_infa_1\Projekt-2\Projekt\Dane\In\wsp.inp.txt --output C:\Users\Axus\Desktop\proj_infa_1\Projekt-2\Projekt\Dane\Out\test.txt
+(wsp.inp.txt - plik wejściowy o rozszerzeniu txt, test.txt - plik wyjściowy o rozszerzeniu txt)
 
-Żeby poprawnie pobrać i uruchomić program należy:
-- Pobrać pliki z internetowego repozytorium i umieścić je w jednym folderze.
-- Otworzyć plik o nazwie skrypt2.py za pomocą środowiska spyder.
-- Do zaimportowania danych stworzyć ścieżki w oknie General setting - Command line option oraz zaznaczyć opcje Remove all variables before exetution. 
-- Postępować zgodnie z instrukcją tekstową, która pokaże się na konsoli.
 
 =======================
 
 5. Opis działania programu
 
 
-Program składa się z dwóch plików:
+Program składa się z czterech plików:
 - skrypt2.py - plik główny 
 - transformacje.py - plik posiadający klasę i funkcje, które posłużą do robienia transformacji.
+- wsp.txt - jest to plik tekstowy zawierający współrzędne wejściowe w układzie geocentrycznym. Plik powinien składać się z 4 linijkowego nagłówka i dowolnej ilości wierszy będących punktami (punkty powinny być ułożone następująco X,Y,Z, separatorem między nimi to ",", a znak oddzielający liczby całkowite od części dziesiętnych to "."
+- wynik.txt - jest to pusty plik tekstowy, w którym zapiszą się wyniki w następującej kolejności (fi,lam,h,n,e,u,x00,y00,x92,y92)
 
-Program odczytuje plik txt, który zawiera dane wejściowe, które następnie będzie transformował.
-Po odczytaniu pliku program spyta się użytkownika, jaki typ działania ma wykonać.
-Kiedy użytkownik wybierze jedną z pięciu możliwych opcji działań, program nadpisze plik wyjściowy o wyniki transformacji współrzędnych.
-Program kończy działanie, po wybraniu opcji 6 (zakończ pracę programu).
+Program odczytuje punkty z pliku wejściowego, a następnie wykonuje wszystkie transformacje z punktu pierwszego. 
+Na konsoli pojawia się zapytanie, który wynik chcemy na niej zobaczyć (wyniki na konsoli są podane z większą dokładnością).
+Następnie wszystkie wyniki są zapisywane w pliku wyjściowym w kolejności podanej powyżej.
 
 =======================
 
 6. Wady programu
 
-- Podawanie za każdym razem ścieżek do plików wejściowego i wyjściowego jest uciążliwe.
-- Program przedstawia współrzędne geodezyjne BLH w łukowej mierze kątowej, przez co nie są one intuicyjne w odczytywaniu.
+-Program zapisuje wszystkie wyniki do pliku wyjściowego, a nie tylko transformacje, o którą zostanie poproszony.
+
+-Plik wejściowy musi mieć konkretną formę aby program zadziałał poprawnie.
+
+-Z niewiadomych przyczyn wyniki w pliku wyjściowym zawsze mają dokładność do szóstego miejsca po przecinku.
