@@ -78,7 +78,7 @@ python main.py --input C:\Users\Axus\Desktop\proj_infa_1\Projekt-2\Projekt\Dane\
 
 
 Program składa się z czterech plików:
-- skrypt2.py - plik główny 
+- main.py - plik główny 
 - transformacje.py - plik posiadający klasę i funkcje, które posłużą do robienia transformacji.
 - wsp.txt - jest to plik tekstowy zawierający współrzędne wejściowe w układzie geocentrycznym. Plik powinien składać się z 4 linijkowego nagłówka i dowolnej ilości wierszy będących punktami (punkty powinny być ułożone następująco X,Y,Z, separatorem między nimi to ",", a znak oddzielający liczby całkowite od części dziesiętnych to "."
 - wynik.txt - jest to pusty plik tekstowy, w którym zapiszą się wyniki w następującej kolejności (fi,lam,h,n,e,u,x00,y00,x92,y92)
