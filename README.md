@@ -68,7 +68,7 @@ Aby poprawnie uruchomić program należy:
 - Jeżeli wszystko jest poprawnie, to powinna pojawić się informacja o braku podanych ścieżek. 
 Natomiast jeżeli będzie brakowało jednej z bibliotek, to patrz punkt wyżej
 - Jak już biblioteki są zainstalowane, to należy podać ścieżki do pliku wejściowego i wyjściowego. Przykład całej komendy:
-main.py --input C:\Users\Axus\Desktop\proj_infa_1\Projekt-2\Projekt\Dane\In\wsp.inp.txt --output C:\Users\Axus\Desktop\proj_infa_1\Projekt-2\Projekt\Dane\Out\test.txt
+python main.py --input C:\Users\Axus\Desktop\proj_infa_1\Projekt-2\Projekt\Dane\In\wsp.inp.txt --output C:\Users\Axus\Desktop\proj_infa_1\Projekt-2\Projekt\Dane\Out\test.txt
 (wsp.inp.txt - plik wejściowy o rozszerzeniu txt, test.txt - plik wyjściowy o rozszerzeniu txt)
 
 
