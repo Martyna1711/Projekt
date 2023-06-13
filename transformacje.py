@@ -14,7 +14,7 @@ class Transformacje:
         else:
             raise NotImplementedError(f"{model} model not implemented")
         self.flattening = (self.a - self.b) / self.a
-        self.e2 = sqrt(2 * self.flattening - self.flattening ** 2)
+        self.e2 = (self.a**2-self.b**2)/self.a**2 
         
 
     def hirvonen (self, X, Y, Z):
