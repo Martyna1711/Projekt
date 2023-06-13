@@ -2,8 +2,9 @@
 """
 Created on Thu Apr 27 08:14:29 2023
 
-@author: Martyna
+@author: Martyna 
 """
+
 import argparse
 import numpy as np
 from transformacje import Transformacje
@@ -40,8 +41,8 @@ def main():
             n_e_u[ix] = elipsoida_grs80.neu(input_data[ix, 0], input_data[ix, 1], input_data[ix, 2],
                                             input_data[ix, 0] + 1, input_data[ix, 1] + 1, input_data[ix, 2] + 1)
 
-            tablica_wynikow[ix] = np.hstack([fi_lam_h[ix], XY_00[ix], XY_92[ix], n_e_u[ix]])
-            
+            tablica_wynikow[ix] = np.hstack([(fi_lam_h[ix,0]/np.pi)*180,(fi_lam_h[ix,1]/np.pi)*180,fi_lam_h[ix,2],n_e_u[ix], XY_00[ix], XY_92[ix]])
+
         while True:
             print("\nOpcje:")
             print("1 | Transformacja współrzędnych geocentrycznych na współrzędne geodezyjne")
@@ -51,13 +52,15 @@ def main():
             print("5 | Transformacja współrzędnych geodezyjnych do układu płaskiego 1992")
             print("6 | Zakończ")
 
-            choice = input("\nWybierz opcję (1-8): ")
+            choice = input("\nWybierz opcję (1-6): ")
 
             if choice == '1':
                 print('Szerokość geodezyjna | Długość geodezyjna | Wysokość na elipsoidzie')
                 for ix in range(w):
                     fi_lam_h[ix] = elipsoida_grs80.hirvonen(input_data[ix, 0], input_data[ix, 1], input_data[ix, 2])
-                    print(f'{fi_lam_h[ix][0]} | {fi_lam_h[ix][1]} | {fi_lam_h[ix][2]}')
+                    fi=(fi_lam_h[ix,0]/np.pi)*180
+                    lam=(fi_lam_h[ix,1]/np.pi)*180
+                    print(f'{fi} | {lam} | {fi_lam_h[ix][2]}')
             elif choice == '2':
                 print('X | Y | Z')
                 for ix in range(w):
